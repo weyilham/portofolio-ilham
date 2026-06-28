@@ -1,0 +1,167 @@
+@import "tailwindcss";
+
+:root {
+  --background: #060810;
+  --foreground: #f8fafc;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+body {
+  background-color: #060810;
+  color: #f8fafc;
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #060810;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Navbar Header - Ultra Sleek Glass */
+.nav-header {
+  background-color: transparent;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid transparent;
+  box-shadow: none;
+  transition: all 0.3s ease;
+}
+
+.nav-header-scrolled {
+  background-color: rgba(6, 8, 16, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.7), 0 0 20px 0 rgba(99, 102, 241, 0.1);
+}
+
+/* Premium Glass Cards & Spotlights */
+.glass-panel {
+  background: rgba(15, 23, 42, 0.65);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(20, 30, 48, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  background: rgba(25, 38, 62, 0.7);
+  border-color: rgba(99, 102, 241, 0.4);
+  box-shadow: 0 20px 40px -15px rgba(99, 102, 241, 0.25), 0 0 15px 0 rgba(168, 85, 247, 0.15);
+  transform: translateY(-6px);
+}
+
+/* Ultra Gradient Texts */
+.gradient-text {
+  background: linear-gradient(135deg, #818cf8 0%, #c084fc 40%, #f472b6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-gold {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-text-cyan {
+  background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #a855f7 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.gradient-border-btn {
+  position: relative;
+  background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
+  background-size: 200% 200%;
+  animation: gradientShift 4s ease infinite;
+  padding: 1.5px;
+  border-radius: 9999px;
+  display: inline-block;
+}
+
+.gradient-border-btn-inner {
+  background: #0b0f19;
+  border-radius: 9999px;
+  padding: 0.85rem 2rem;
+  transition: all 0.3s ease;
+}
+
+.gradient-border-btn:hover .gradient-border-btn-inner {
+  background: transparent;
+}
+
+/* Dual Rotating Conic Gradient Beams for 2 Opposite Moving Border Lines */
+@keyframes spinBeam {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes spinBeamReverse {
+  0% { transform: rotate(360deg); }
+  100% { transform: rotate(0deg); }
+}
+
+.animate-spin-beam {
+  animation: spinBeam 6s linear infinite;
+}
+
+.animate-spin-beam-reverse {
+  animation: spinBeamReverse 8s linear infinite;
+}
+
+/* Background Animations */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) scale(1) rotate(0deg); }
+  50% { transform: translateY(-25px) scale(1.08) rotate(3deg); }
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes shiny {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.animate-shiny {
+  animation: shiny 6s linear infinite;
+}
+
+.animate-float-slow {
+  animation: float 9s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 12s ease-in-out 4s infinite;
+}
